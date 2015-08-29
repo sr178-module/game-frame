@@ -20,5 +20,8 @@ public class ServiceCacheFactory {
 		return serviceCache;
 	}
 	
+	public static <T> T getService(Class<T> serviceClass){
+		return serviceCache.getService(serviceClass);
+	}
 
 }
