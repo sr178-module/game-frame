@@ -15,6 +15,12 @@ public class LogSystem {
 	private final static Logger loggerInfo = Logger.getLogger("FileInfo");
 	private final static Logger loggerWarn = Logger.getLogger("FileWarn");
 	private final static Logger loggerError = Logger.getLogger("FileError");
+	private final static Logger loggeraLOG = Logger.getLogger("Log");
+	public static void log(String disc) {
+		if(logger.isDebugEnabled()){
+			loggeraLOG.debug(getCaller()+"-"+disc);
+		}
+	}
 	public static void debug(String disc) {
 		if(logger.isDebugEnabled()){
 			loggerDebug.debug(getCaller()+"-"+disc);
