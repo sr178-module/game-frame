@@ -70,17 +70,9 @@ public class SpringLoad {
 		String applicationContextPath = SYSTEM_CONFIG_NAME;
 		beanConfigs.add(applicationContextPath);
 
-		List<String> configPathList = new ArrayList<String>();
-		configPathList.add("classpath*:com/**/bean_config/beans.xml");
-//		configPathList.add("classpath*:com/**/bean_config/beans.xml");
-//		configPathList
-//				.add("classpath*:com/**/bean_config/beans.xml");
-//		configPathList
-//				.add("classpath*:com/**/bean_config/beans.xml");
 
-		for (String configPath : configPathList) {
 			try {
-				Resource[] resources = resolver.getResources(configPath);
+				Resource[] resources = resolver.getResources("classpath*:com/**/bean_config/beans.xml");
 				for (Resource resource : resources) {
 						String file = resource.getURL().getPath();
 						String config = file
@@ -91,7 +83,46 @@ public class SpringLoad {
 				LogSystem.error(e, "");
 				System.exit(0);
 			}
-		}
+			
+			try {
+				Resource[] resources = resolver.getResources("classpath*:cn/**/bean_config/beans.xml");
+				for (Resource resource : resources) {
+						String file = resource.getURL().getPath();
+						String config = file
+								.substring(file.lastIndexOf("cn/"));
+						beanConfigs.add(config);
+				}
+			} catch (IOException e) {
+				LogSystem.error(e, "");
+				System.exit(0);
+			}
+			
+			try {
+				Resource[] resources = resolver.getResources("classpath*:org/**/bean_config/beans.xml");
+				for (Resource resource : resources) {
+						String file = resource.getURL().getPath();
+						String config = file
+								.substring(file.lastIndexOf("org/"));
+						beanConfigs.add(config);
+				}
+			} catch (IOException e) {
+				LogSystem.error(e, "");
+				System.exit(0);
+			}
+			
+			try {
+				Resource[] resources = resolver.getResources("classpath*:net/**/bean_config/beans.xml");
+				for (Resource resource : resources) {
+						String file = resource.getURL().getPath();
+						String config = file
+								.substring(file.lastIndexOf("net/"));
+						beanConfigs.add(config);
+				}
+			} catch (IOException e) {
+				LogSystem.error(e, "");
+				System.exit(0);
+			}
+			
 		// 加载bean
 		String[] beans = beanConfigs.toArray(new String[beanConfigs.size()]);
 		appContext = new ClassPathXmlApplicationContext(beans);
