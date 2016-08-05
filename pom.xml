@@ -37,6 +37,19 @@
 						<target>1.7</target>
 					</configuration>
 				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-source-plugin</artifactId>
+					<version>2.4</version>
+					<executions>
+						<execution>
+							<phase>verify</phase>
+							<goals>
+								<goal>jar-no-fork</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
 			</plugins>
 		</pluginManagement>
     </build>
@@ -153,7 +166,7 @@
 		<repository>
 			<id>local</id>
 			<name>local Repository</name>
-			<url>http://mvn.dev.linux64.cn:8081/nexus/content/repositories/thirdparty/</url>
+			<url>http://mvn.sr178.com:8081/nexus/content/repositories/thirdparty/</url>
 			<releases>
 				<enabled>true</enabled>
 			</releases>
@@ -161,7 +174,7 @@
 		<repository>
 			<id>local snapshots</id>
 			<name>local Repository</name>
-			<url>http://mvn.dev.linux64.cn:8081/nexus/content/repositories/snapshots/</url>
+			<url>http://mvn.sr178.com:8081/nexus/content/repositories/snapshots/</url>
 			<releases>
 				<enabled>true</enabled>
 			</releases>
@@ -170,7 +183,7 @@
 	<distributionManagement>
 	    <snapshotRepository>
 	    <id>snapshots</id>
-	    <url>http://mvn.dev.linux64.cn:8081/nexus/content/repositories/snapshots</url>
+	    <url>http://mvn.sr178.com:8081/nexus/content/repositories/snapshots</url>
 	    </snapshotRepository>
 	</distributionManagement>
 </project>
