@@ -13,7 +13,7 @@
         <version.log4j>1.2.15</version.log4j>
         <version.slf4j>1.5.0</version.slf4j>
         <version.junit>4.4</version.junit>  
-        <version.quartz>2.2.1</version.quartz>     
+        <version.quartz>2.3.2</version.quartz>     
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <build>
