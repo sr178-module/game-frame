@@ -8,7 +8,7 @@
   <properties>
         <!-- Spring version -->
         <version.mavencompiler>2.3.2</version.mavencompiler>
-        <version.spring>3.1.1.RELEASE</version.spring>
+        <version.spring>5.2.22.RELEASE</version.spring>
         <version.servlet>2.5</version.servlet>
         <version.log4j>1.2.15</version.log4j>
         <version.slf4j>1.5.0</version.slf4j>
